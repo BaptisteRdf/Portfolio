@@ -184,45 +184,42 @@
                 
                 <h3>Objectif</h3>
                 <p>
-                    Ce projet avait pour objectif de nous initier à la programmation en orientée-objet en <strong>C++</strong>. Ce projet final nous a permis de résoudre le problème à N corps
+                    Ce projet avait pour objectif de nous initier à la programmation en orientée-objet en <strong>C++</strong>. Ce projet final nous a permis de résoudre le problème à N corps. Ce problème consiste à représenter N corps dans un espace à trois dimensions, tous soumis à l'attraction gravitationelle des autres corps. Dans notre cas, nous prendrons comme corps les <strong>planètes du Système Solaire</strong>.
                 </p>
                 <br>
                 
-                <h3>Missions</h3>
+                <h3>Approche</h3>
                 <ul style="padding-left: 20px;">
-                    <li><strong>Modélisation et Maillage :</strong> Création et comparaison de géométries simplifiées en 2D (cylindre) et 3D (sphère). Réalisation de maillages structurés et non-structurés via ICEM CFD et SnappyHexMesh pour optimiser le coût de calcul.</li>
-                    <li><strong>Développement de méthodes numériques :</strong> Mise en place de simulations CFD sous OpenFOAM (solveurs compressibles rhoCentralFoam/sonicFoam) pour reproduire les conditions de vol d'une sphère de 8 mm à 2 km/s.</li>
-                    <li><strong>Analyse et Validation :</strong> Étude des profils de pression, température et du nombre de Stanton, validée par les équations de Rankine-Hugoniot et les données expérimentales.</li>
+                    <li><strong>Programmation en C++:</strong> Dans un premier temps, j'ai réalisé différents fichiers qui me permette d'obtenir en sortie un fichier de données (position, vitesse, masse), exploitable en <strong>Python</strong></li>
+                    <li><strong>Programmation en Python:</strong> En exploitant les données du fichier, j'ai pu animer les différentes orbites des planètes du Système Solaire. </li>
                 </ul>
                 <br>
                 <h3>Résultats</h3>
                 <ul style="padding-left: 20px;">
-                <li><strong>Validation théorique :</strong> Les profils de température et de pression concordent avec les équations de Rankine-Hugoniot, avec une erreur relative limitée à 8 % pour la pression sur le modèle sphérique.</li>
-                <li><strong>Impact du maillage :</strong> Le maillage structuré a offert la meilleure précision proche des parois, contrairement au maillage non-structuré qui a généré des coûts de calculs inutiles et des instabilités.</li>
-                <li><strong>Choix du modèle de turbulence :</strong> Le modèle <em>k-&omega; SST</em> s'est avéré supérieur au modèle <em>k-&epsilon;</em> (qui présentait un écart de 21 %), capturant mieux les chocs et les effets thermiques.</li>
+                <li>
+                    La première vidéo porte sur l'orbite de Mercure, la Terre, Vénus et Mars autour du Soleil.
+                    <div class="download-section">
+                    <a href="https://youtu.be/F7jG4IVHCGk" class="btn-download" download>
+                        Vidéo n°1
+                    </a>
+                    </div>
+                </li>
+                <br><br>
+                <li>
+                    La deuxième porte sur l'orbite de l'ensemble des planètes autour du Soleil.
+                    <div class="download-section">
+                    <a href="https://youtu.be/Hq1y9tkh54s" class="btn-download" download>
+                        Vidéo n°2
+                    </a>
+                    </div>
+                </li>
                 </ul>
                 <br>
-                <h3>Compétences développées</h3>
-
-                <strong>Compétences Techniques</strong>
-                <ul style="padding-left: 20px;">
-                <li><strong>Simulation CFD avancée :</strong> Maîtrise du logiciel OpenFOAM (solveurs compressibles rhoCentralFoam/sonicFoam) et de l'environnement Linux.</li>
-                <li><strong>Génération de maillage :</strong> Utilisation experte d'ICEM CFD et SnappyHexMesh pour la création de maillages structurés et non-structurés adaptés aux écoulements complexes.</li>
-                <li><strong>Physique des fluides :</strong> Modélisation des écoulements hypersoniques, gestion des ondes de choc (Rankine-Hugoniot) et application des modèles de turbulence (RANS k-&omega; SST).</li>
-                <li><strong>Analyse thermique :</strong> Calcul et interprétation des flux de chaleur et du nombre de Stanton pour la rentrée atmosphérique.</li>
-                </ul><br>
-
-                <strong>Compétences Transversales</strong>
-                <ul style="padding-left: 20px;">
-                <li><strong>Recherche et Analyse critique :</strong> Confrontation des résultats de simulation aux données expérimentales et théoriques pour valider la fiabilité des modèles.</li>
-                <li><strong>Adaptabilité internationale :</strong> Intégration réussie dans un environnement de recherche académique d'excellence au Japon (Université de Tohoku).</li>
-                <li><strong>Gestion de ressources :</strong> Optimisation des coûts de calcul sur supercalculateur et gestion des délais en amont des campagnes d'essais.</li>
-                </ul>
 
                 <!-- Download Section -->
                 <div class="download-section">
                     <h3>Rapport de projet</h3>
-                    <p style="margin-bottom: 1.5rem;"Mon rapport de projet est disponible au téléchargement au format PDF ci-dessous.</p>
+                    <p style="margin-bottom: 1.5rem;"> Mon rapport de projet est disponible au téléchargement au format PDF ci-dessous.</p>
                     <a href="Projet_ncorps.pdf" class="btn-download" download>
                         <span>📄</span> Télécharger le rapport (PDF)
                     </a>
