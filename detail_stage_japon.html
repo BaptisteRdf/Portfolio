@@ -185,25 +185,39 @@
                 
                 <h3>Contexte du stage</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Ce stage a été réalisé au sein de l'Institute of Fluid Science (IFS) de l'Université de Tohoku (Sendai, Japon), dans le laboratoire d'ingénierie des fluides aérospatiaux. Le projet s'inscrit dans une collaboration avec la JAXA visant à améliorer la prédiction des flux thermiques générés lors de la rentrée atmosphérique de véhicules spatiaux (type capsule Apollo) à des vitesses hypersoniques (Mach 6.3). L'objectif final était de développer une méthode numérique permettant de prédire avec précision les flux thermiques sur la surface de ces véhicules.
                 </p>
                 <br>
                 
-                <h3>Missions et Réalisations</h3>
-                <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                </p>
-                <p>
-                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
-                </p>
+                <h3>Missions</h3>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Modélisation et Maillage :</strong> Création et comparaison de géométries simplifiées en 2D (cylindre) et 3D (sphère). Réalisation de maillages structurés et non-structurés via ICEM CFD et SnappyHexMesh pour optimiser le coût de calcul.</li>
+                    <li><strong>Développement de méthodes numériques :</strong> Mise en place de simulations CFD sous OpenFOAM (solveurs compressibles rhoCentralFoam/sonicFoam) pour reproduire les conditions de vol d'une sphère de 8 mm à 2 km/s.</li>
+                    <li><strong>Analyse et Validation :</strong> Étude des profils de pression, température et du nombre de Stanton, validée par les équations de Rankine-Hugoniot et les données expérimentales.</li>
+                </ul>
                 <br>
-
+                <h3>Résultats</h3>
+                <ul style="padding-left: 20px;">
+                <li><strong>Validation théorique :</strong> Les profils de température et de pression concordent avec les équations de Rankine-Hugoniot, avec une erreur relative limitée à 8 % pour la pression sur le modèle sphérique.</li>
+                <li><strong>Impact du maillage :</strong> Le maillage structuré a offert la meilleure précision proche des parois, contrairement au maillage non-structuré qui a généré des coûts de calculs inutiles et des instabilités.</li>
+                <li><strong>Choix du modèle de turbulence :</strong> Le modèle <em>k-&omega; SST</em> s'est avéré supérieur au modèle <em>k-&epsilon;</em> (qui présentait un écart de 21 %), capturant mieux les chocs et les effets thermiques.</li>
+                </ul>
+                <br>
                 <h3>Compétences développées</h3>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Consectetur adipiscing elit</li>
-                    <li>Sed do eiusmod tempor incididunt</li>
-                    <li>Ut labore et dolore magna aliqua</li>
+
+                <strong>Compétences Techniques</strong>
+                <ul style="padding-left: 20px;">
+                <li><strong>Simulation CFD avancée :</strong> Maîtrise du logiciel OpenFOAM (solveurs compressibles rhoCentralFoam/sonicFoam) et de l'environnement Linux.</li>
+                <li><strong>Génération de maillage :</strong> Utilisation experte d'ICEM CFD et SnappyHexMesh pour la création de maillages structurés et non-structurés adaptés aux écoulements complexes.</li>
+                <li><strong>Physique des fluides :</strong> Modélisation des écoulements hypersoniques, gestion des ondes de choc (Rankine-Hugoniot) et application des modèles de turbulence (RANS k-&omega; SST).</li>
+                <li><strong>Analyse thermique :</strong> Calcul et interprétation des flux de chaleur et du nombre de Stanton pour la rentrée atmosphérique.</li>
+                </ul><br>
+
+                <strong>Compétences Transversales</strong>
+                <ul style="padding-left: 20px;">
+                <li><strong>Recherche et Analyse critique :</strong> Confrontation des résultats de simulation aux données expérimentales et théoriques pour valider la fiabilité des modèles.</li>
+                <li><strong>Adaptabilité internationale :</strong> Intégration réussie dans un environnement de recherche académique d'excellence au Japon (Université de Tohoku).</li>
+                <li><strong>Gestion de ressources :</strong> Optimisation des coûts de calcul sur supercalculateur et gestion des délais en amont des campagnes d'essais.</li>
                 </ul>
 
                 <!-- Download Section -->
