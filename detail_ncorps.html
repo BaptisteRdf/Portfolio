@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails Stage Japon - Baptiste Ridolfi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #1e3a8a;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section-bg {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: #000;
+            margin-bottom: 1rem;
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-download:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .btn-download span {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Projet N Corps</h1>
+            <p class="subtitle">Projet informatique - Université Lyon 1</p>
+        </div>
+    </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">← Retour à l'accueil</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="section-bg">
+                
+                <h3>Objectif</h3>
+                <p>
+                    Ce projet avait pour objectif de nous initier à la programmation en orientée-objet en <strong>C++</strong>. Ce projet final nous a permis de résoudre le problème à N corps
+                </p>
+                <br>
+                
+                <h3>Missions</h3>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Modélisation et Maillage :</strong> Création et comparaison de géométries simplifiées en 2D (cylindre) et 3D (sphère). Réalisation de maillages structurés et non-structurés via ICEM CFD et SnappyHexMesh pour optimiser le coût de calcul.</li>
+                    <li><strong>Développement de méthodes numériques :</strong> Mise en place de simulations CFD sous OpenFOAM (solveurs compressibles rhoCentralFoam/sonicFoam) pour reproduire les conditions de vol d'une sphère de 8 mm à 2 km/s.</li>
+                    <li><strong>Analyse et Validation :</strong> Étude des profils de pression, température et du nombre de Stanton, validée par les équations de Rankine-Hugoniot et les données expérimentales.</li>
+                </ul>
+                <br>
+                <h3>Résultats</h3>
+                <ul style="padding-left: 20px;">
+                <li><strong>Validation théorique :</strong> Les profils de température et de pression concordent avec les équations de Rankine-Hugoniot, avec une erreur relative limitée à 8 % pour la pression sur le modèle sphérique.</li>
+                <li><strong>Impact du maillage :</strong> Le maillage structuré a offert la meilleure précision proche des parois, contrairement au maillage non-structuré qui a généré des coûts de calculs inutiles et des instabilités.</li>
+                <li><strong>Choix du modèle de turbulence :</strong> Le modèle <em>k-&omega; SST</em> s'est avéré supérieur au modèle <em>k-&epsilon;</em> (qui présentait un écart de 21 %), capturant mieux les chocs et les effets thermiques.</li>
+                </ul>
+                <br>
+                <h3>Compétences développées</h3>
+
+                <strong>Compétences Techniques</strong>
+                <ul style="padding-left: 20px;">
+                <li><strong>Simulation CFD avancée :</strong> Maîtrise du logiciel OpenFOAM (solveurs compressibles rhoCentralFoam/sonicFoam) et de l'environnement Linux.</li>
+                <li><strong>Génération de maillage :</strong> Utilisation experte d'ICEM CFD et SnappyHexMesh pour la création de maillages structurés et non-structurés adaptés aux écoulements complexes.</li>
+                <li><strong>Physique des fluides :</strong> Modélisation des écoulements hypersoniques, gestion des ondes de choc (Rankine-Hugoniot) et application des modèles de turbulence (RANS k-&omega; SST).</li>
+                <li><strong>Analyse thermique :</strong> Calcul et interprétation des flux de chaleur et du nombre de Stanton pour la rentrée atmosphérique.</li>
+                </ul><br>
+
+                <strong>Compétences Transversales</strong>
+                <ul style="padding-left: 20px;">
+                <li><strong>Recherche et Analyse critique :</strong> Confrontation des résultats de simulation aux données expérimentales et théoriques pour valider la fiabilité des modèles.</li>
+                <li><strong>Adaptabilité internationale :</strong> Intégration réussie dans un environnement de recherche académique d'excellence au Japon (Université de Tohoku).</li>
+                <li><strong>Gestion de ressources :</strong> Optimisation des coûts de calcul sur supercalculateur et gestion des délais en amont des campagnes d'essais.</li>
+                </ul>
+
+                <!-- Download Section -->
+                <div class="download-section">
+                    <h3>Rapport de projet</h3>
+                    <p style="margin-bottom: 1.5rem;"Mon rapport de projet est disponible au téléchargement au format PDF ci-dessous.</p>
+                    <a href="Projet_ncorps.pdf" class="btn-download" download>
+                        <span>📄</span> Télécharger le rapport (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Baptiste Ridolfi. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
