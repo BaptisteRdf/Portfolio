@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails Rapport TP MNM - Baptiste Ridolfi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section-bg {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: #000;
+            margin-bottom: 1rem;
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-download:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .btn-download span {
+            margin-right: 10px;
+        }
+
+        /* List Styling */
+        .results-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .results-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Projet Éléments Finis</h1>
+            <p class="subtitle">Polytech Lyon - Université Lyon 1 - 2024/2025</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">← Retour à l'accueil</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="section-bg">
+                
+                <h3>Objectif</h3>
+                <p>
+                    Ce travail pratique a pour but de modéliser la <strong>répartition de la température dans un barreau métallique</strong> (type ailette de refroidissement) en régime stationnaire.
+                    L'objectif est d'appliquer la <strong>Méthode des Éléments Finis (MEF)</strong> pour résoudre les équations de chaleur (conduction et convection) et de comparer les solutions numériques obtenues avec les solutions analytiques exactes.
+                </p>
+                <br>
+                
+                <h3>Approche & Méthodologie</h3>
+                <p style="margin-bottom: 10px;">Le projet a été mené en plusieurs étapes clés utilisant Python :</p>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Modélisation 1D (Éléments linéaires et quadratiques) :</strong> 
+                        Mise en équation du problème (Lois de Newton et Fourier) et écriture de la formulation faible.
+                        Résolution numérique pour deux cas de figure : avec une paroi isolante (adiabatique) et sans paroi isolante, en utilisant des éléments finis de type P1 (linéaires) et P2 (quadratiques).
+                    </li>
+                    <li><strong>Modélisation 2D :</strong> 
+                        Extension du problème à deux dimensions pour visualiser les gradients thermiques latéraux. Utilisation de maillages triangulaires (éléments linéaires) et quadrangulaires (éléments Q1).
+                    </li>
+                    <li><strong>Analyse d'erreur :</strong> 
+                        Calcul de l'erreur relative entre la solution approchée et la solution exacte pour valider la précision des maillages et observer la convergence des méthodes.
+                    </li>
+                </ul>
+                <br>
+                
+                <h3>Résultats Principaux</h3>
+                <ul class="results-list">
+                    <li>
+                        <strong>Validité de la méthode 1D :</strong> Les courbes de température obtenues par la méthode numérique (P1 et P2) se superposent quasi-parfaitement à la solution exacte, confirmant la fiabilité de la MEF pour ce problème. L'erreur relative reste inférieure à 10⁻⁴.
+                    </li>
+                    <li>
+                        <strong>Comparaison Adiabatique vs Non-adiabatique :</strong> Le retrait de l'isolant en bout d'ailette modifie les conditions limites (Condition de Neumann) mais n'impacte pas la précision de la méthode. On observe une légère différence de température finale due à la convection supplémentaire.
+                    </li>
+                    <li>
+                        <strong>Analyse 2D et Maillage :</strong> La modélisation 2D a mis en évidence un gradient de température vertical dominant, mais aussi une légère variation latérale due à la géométrie. La comparaison des maillages montre que les éléments quadrangulaires permettent d'obtenir une précision équivalente aux éléments triangulaires tout en nécessitant moins d'éléments de calcul.
+                    </li>
+                </ul>
+                <br>
+
+                <div class="download-section">
+                    <h3>Rapport de TP complet</h3>
+                    <p style="margin-bottom: 1.5rem;"> L'intégralité de l'étude, incluant les mises en équations détaillées, les matrices de rigidité/masse et les graphiques Python, est disponible ci-dessous.</p>
+                    <a href="TP_MNM-5.pdf" class="btn-download" download>
+                        <span>📄</span> Télécharger le rapport (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Baptiste Ridolfi. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
