@@ -134,6 +134,23 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Style du bouton */
+        .btn-details {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Bleu standard - changez la couleur selon votre thème */
+            color: white;
+            text-decoration: none; /* Enlève le soulignement du lien */
+            border-radius: 5px; /* Arrondit les angles */
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Animation douce au survol */
+        }
+
+        /* Changement de couleur quand on passe la souris dessus */
+        .btn-details:hover {
+            background-color: #0056b3; /* Bleu plus foncé */
+        }
         /* Skills */
         .skills-grid {
             display: grid;
@@ -154,23 +171,37 @@
             display: inline-block;
         }
 
-        /* Projects */
+        /* 1. On s'assure que toutes les cartes ont la même hauteur */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            /* Ajustez les colonnes selon vos besoins (ici automatique) */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px;
+            align-items: stretch; /* C'est ça qui force la même hauteur */
         }
 
+        /* 2. On transforme la carte en colonne flexible */
         .project-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #1e3a8a;
-            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column; /* De haut en bas */
+            height: 100%;           /* Remplit toute la case de la grille */
+            padding: 20px;          /* (Gardez votre padding actuel) */
+            box-sizing: border-box; /* Évite les débordements */
+            background-color: #f9f9f9; /* (Exemple de couleur) */
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        /* 3. L'astuce magique : On dit à l'image de se pousser vers le bas */
+        .project-card img {
+            margin-top: auto;       /* Pousse l'image au fond de la carte */
+            margin-bottom: 20px;    /* Un peu d'espace avant le bouton */
+            width: 100%;
+            object-fit: contain;
+        }
+
+        /* 4. On centre le bouton pour faire propre */
+        .project-card .btn-details {
+            align-self: center;     /* Centre le bouton horizontalement */
+            text-align: center;
         }
 
         /* Education & Experience */
@@ -260,10 +291,10 @@
         <div class="container">
             <ul>
                 <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#skills">Expériences</a></li>
                 <li><a href="#projects">Projets</a></li>
-                <li><a href="#education">Formation</a></li>
-                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#education">Parcours académique</a></li>
+                <li><a href="#experience">Compétences</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -295,7 +326,114 @@
             </div>
         </div>
     </section>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-bg">
+                <h2>Expériences Professionnelles</h2>
+                <div class="timeline-item">
+                    <div class="date">Mai 2025 - Août 2025</div>
+                    <h3>Stage Assistant Ingénieur - Université de Tohoku (Sendai, Japon)</h3>
+                    <p>
+                        Simulation d’écoulements hypersoniques sur véhicule de rentrée spatiale et validation expérimentale.<br><br>
+                        J'ai co-écrit l'article scientifique <em>"Large Eddy Simulations on Heat Flux Characteristics of Apollo-shaped Capsule"</em> (Inokuma et al.).
+                    </p>
+                    <br>
+                    <p><strong>Compétences développées :</strong></p>
+                    <ul>
+                        <li><strong>Technique (CFD) :</strong> OpenFOAM, ANSYS (Icem-CFD, Fluent).</li>
+                        <li><strong>Méthodologie :</strong> Planification des simulations, analyse rigoureuse des résultats.</li>
+                        <li><strong>Communication :</strong> Synthèse technique, reporting et présentation en anglais, collaboration internationale.</li>
+                    </ul>
+                    <br>
+                    <a href="detail_stage_japon.html" class="btn-details">Voir les détails du projet &rarr;</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2021 - 2024</div>
+                    <h3>Activités professionnelles diverses</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
+
+    <!-- Projects Section -->
+    <section id="projects">
+    <div class="container">
+        <div class="section-bg">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Efficacité des winglets - En cours</h3>
+                    <br><br>
+                    <p>Outils Utilisés : <strong>SolidWorks, Ansys Workbench</strong></p>
+                    <br>
+                    <p>
+                        <strong>Description du projet :</strong> Ce projet vise à modéliser puis simuler l'efficacité des winglets sur les performances aérodynamiques d'un avion.
+                    </p>
+                    <br>
+                    <img src="./winglet.png" alt="Image illustrant l'efficacité des winglets" style="width: 100%; object-fit: contain;">
+                    <br>
+                    <a href="detail_winglet.html" class="btn-details">Voir les détails du projet &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Problème à N corps</h3>
+                    <br><br>
+                    <p>Outils Utilisés : <strong>C++, Python</strong></p>
+                    <br>
+                    <p>
+                        <strong>Description du projet :</strong> Ce projet vise à développer une simulation interactive des interactions gravitationnelles entre plusieurs corps célestes.<br>
+                        L'objectif est d'utiliser la programmation orientée-objet en C++ pour les calculs de physique lourde (position, vitesse, forces) et de visualiser avec une animation, l'orbite des corps.
+                    </p>
+                    <br>
+                    <img src="./ncorps.png" alt="Simulation du problème à N corps" style="width: 100%; object-fit: contain;">
+                    <br>
+                    <a href="detail_ncorps.html" class="btn-details">Voir les détails du projet &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Équations de chaleur</h3>
+                    <br><br>
+                    <p>Outils Utilisés : <strong>Python, Méthodes des éléments finis</strong></p>
+                    <br>
+                    <p>
+                        <strong>Description du projet :</strong> Développement et validation d'une simulation numérique par Éléments Finis (MEF) pour modéliser la distribution de température dans une ailette, comparant les modèles 1D (linéaires/quadratiques) et 2D (triangulaires/quadrangulaires).
+                    </p>
+                    <br>
+                    <img src="./Temperature_quadratique.png" alt="Résultats de la simulation d'équations de chaleur par éléments finis" style="width: 100%; object-fit: contain;">
+                    <br>
+                    <a href="detail_chaleur.html" class="btn-details">Voir les détails du projet &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-bg">
+                <h2>Parcours académique</h2>
+                <div class="timeline-item">
+                    <div class="date">2023 - 2026</div>
+                    <h3>École Polytechnique Universitaire de Lyon</h3>
+                    <p>Diplôme d'ingénieur en génie Mécanique</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2021 - 2023</div>
+                    <h3>École Polytechnique Universitaire de Marseille</h3>
+                    <p>Cycle préparatoire PeiP</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2018 - 2021</div>
+                    <h3>Baccalauréat - Collège et Lycée Saint Louis Orange</h3>
+                    <p>Mention Bien. Spécialités : Mathématiques, Physique-Chimie, Numérique et sciences informatiques</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="skills">
     <div class="container">
         <div class="section-bg">
@@ -340,115 +478,6 @@
         </div>
     </div>
 </section>
-<!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <div class="section-bg">
-                <h2>Parcours académiques</h2>
-                <div class="timeline-item">
-                    <div class="date">2023 - 2026</div>
-                    <h3>École Polytechnique Universitaire de Lyon</h3>
-                    <p>Diplôme d'ingénieur en génie Mécanique</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="date">2021 - 2023</div>
-                    <h3>École Polytechnique Universitaire de Marseille</h3>
-                    <p>Cycle préparatoire PeiP</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="date">2018 - 2021</div>
-                    <h3>Baccalauréat - Collège et Lycée Saint Louis Orange</h3>
-                    <p>Mention Bien. Spécialités : Mathématiques, Physique-Chimie, Numérique et sciences informatiques</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Projects Section -->
-    <section id="projects">
-    <div class="container">
-        <div class="section-bg">
-            <h2>Mes Projets</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <h3>Efficacité des winglets - En cours</h3>
-                    <br><br>
-                    <p>Outils Utilisés : <strong>SolidWorks, Ansys Workbench</strong></p>
-                    <br>
-                    <p>
-                        <strong>Description du projet :</strong> Ce projet vise à modéliser puis simuler l'efficacité des winglets sur les performances aérodynamiques d'un avion.
-                    </p>
-                    <br>
-                    <img src="./winglet.png" alt="Image illustrant l'efficacité des winglets" style="width: 100%; object-fit: contain;">
-                </div>
-
-                <div class="project-card">
-                    <h3>Problème à N corps</h3>
-                    <br><br>
-                    <p>Outils Utilisés : <strong>C++, Python</strong></p>
-                    <br>
-                    <p>
-                        <strong>Description du projet :</strong> Ce projet vise à développer une simulation interactive des interactions gravitationnelles entre plusieurs corps célestes.<br>
-                        L'objectif est d'utiliser la programmation orientée-objet en C++ pour les calculs de physique lourde (position, vitesse, forces) et de visualiser avec une animation, l'orbite des corps.
-                    </p>
-                    <br>
-                    <img src="./ncorps.png" alt="Simulation du problème à N corps" style="width: 100%; object-fit: contain;">
-                </div>
-
-                <div class="project-card">
-                    <h3>Équations de chaleur</h3>
-                    <br><br>
-                    <p>Outils Utilisés : <strong>Python, Méthodes des éléments finis</strong></p>
-                    <br>
-                    <p>
-                        <strong>Description du projet :</strong> Développement et validation d'une simulation numérique par Éléments Finis (MEF) pour modéliser la distribution de température dans une ailette, comparant les modèles 1D (linéaires/quadratiques) et 2D (triangulaires/quadrangulaires).
-                    </p>
-                    <br>
-                    <img src="./Temperature_quadratique.png" alt="Résultats de la simulation d'équations de chaleur par éléments finis" style="width: 100%; object-fit: contain;">
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-bg">
-                <h2>Expérience Professionnelle</h2>
-                <div class="timeline-item">
-                    <div class="date">Mai 2025 - Août 2025</div>
-                    <h3>Stage Assistant Ingénieur - Université de Tohoku (Sendai, Japon)</h3>
-                    <p>
-                        Simulation d’écoulements hypersoniques sur véhicule de rentrée spatiale et validation expérimentale. 
-                        J'ai co-écrit l'article scientifique <em>"Large Eddy Simulations on Heat Flux Characteristics of Apollo-shaped Capsule"</em> (Inokuma et al.).
-                    </p>
-                    
-                    <p><strong>Compétences développées :</strong></p>
-                    <ul>
-                        <li><strong>Technique (CFD) :</strong> OpenFOAM, ANSYS (Icem-CFD, Fluent).</li>
-                        <li><strong>Méthodologie :</strong> Planification des simulations, analyse rigoureuse des résultats.</li>
-                        <li><strong>Communication :</strong> Synthèse technique, reporting et présentation en anglais, collaboration internationale.</li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="date">Mois Année - Mois Année</div>
-                    <h3>[Stage/Job Étudiant] - [Nom de l'Entreprise]</h3>
-                    <p>
-                        Décrivez votre expérience, les tâches accomplies et les résultats obtenus.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="date">Activités Extrascolaires</div>
-                    <h3>Projets Personnels et Bénévolat</h3>
-                    <p>• [Association/Club] - [Votre rôle] (Période)</p>
-                    <p>• [Projet personnel] - Description (Période)</p>
-                    <p>• [Activité bénévole] - [Organisation] (Période)</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -476,7 +505,6 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Baptiste Ridolfi. Tous droits réservés.</p>
-            <p>Portfolio créé avec passion pour mettre en avant mes compétences et projets.</p>
         </div>
     </footer>
 
