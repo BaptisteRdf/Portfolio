@@ -43,6 +43,15 @@
             justify-content: center;
             font-size: 3rem;
             color: #1e3a8a;
+            overflow: hidden;
+        }
+
+        /* Pour utiliser la photo du CV, remplacer le contenu de .profile-img
+           dans le HTML par : <img src="./photo_cv.jpg" alt="Baptiste Ridolfi"> */
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
@@ -53,6 +62,16 @@
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
+        }
+
+        .availability {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.4rem 1.2rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 25px;
+            font-size: 0.95rem;
         }
 
         /* Navigation */
@@ -139,18 +158,18 @@
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #093586; /* Bleu standard - changez la couleur selon votre thème */
+            background-color: #093586;
             color: white;
-            text-decoration: none; /* Enlève le soulignement du lien */
-            border-radius: 5px; /* Arrondit les angles */
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s ease; /* Animation douce au survol */
+            transition: background-color 0.3s ease;
         }
 
-        /* Changement de couleur quand on passe la souris dessus */
         .btn-details:hover {
-            background-color: #0056b3; /* Bleu plus foncé */
+            background-color: #0056b3;
         }
+
         /* Skills */
         .skills-grid {
             display: grid;
@@ -174,33 +193,32 @@
         /* 1. On s'assure que toutes les cartes ont la même hauteur */
         .projects-grid {
             display: grid;
-            /* Ajustez les colonnes selon vos besoins (ici automatique) */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 20px;
-            align-items: stretch; /* C'est ça qui force la même hauteur */
+            align-items: stretch;
         }
 
         /* 2. On transforme la carte en colonne flexible */
         .project-card {
             display: flex;
-            flex-direction: column; /* De haut en bas */
-            height: 100%;           /* Remplit toute la case de la grille */
-            padding: 20px;          /* (Gardez votre padding actuel) */
-            box-sizing: border-box; /* Évite les débordements */
-            background-color: #f9f9f9; /* (Exemple de couleur) */
+            flex-direction: column;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
         }
 
         /* 3. L'astuce magique : On dit à l'image de se pousser vers le bas */
         .project-card img {
-            margin-top: auto;       /* Pousse l'image au fond de la carte */
-            margin-bottom: 20px;    /* Un peu d'espace avant le bouton */
+            margin-top: auto;
+            margin-bottom: 20px;
             width: 100%;
             object-fit: contain;
         }
 
         /* 4. On centre le bouton pour faire propre */
         .project-card .btn-details {
-            align-self: center;     /* Centre le bouton horizontalement */
+            align-self: center;
             text-align: center;
         }
 
@@ -282,7 +300,8 @@
         <div class="container">
             <div class="profile-img">BR</div>
             <h1>Baptiste Ridolfi</h1>
-            <p class="subtitle">Étudiant en génie mécanique</p>
+            <p class="subtitle">Ingénieur calcul et conception mécanique</p>
+            <p class="availability">Disponible à partir de mi-octobre 2026</p>
         </div>
     </header>
 
@@ -309,22 +328,22 @@
                 <div class="about-content">
                     <div class="contact-info">
                         <h3>Informations personnelles</h3>
-                        <p><strong>Email :</strong> baptiste.ridolfi@etu.univ-lyon1.fr</p>
+                        <p><strong>Email :</strong> baptiste.ridolfi@gmail.com</p>
                         <p><strong>Téléphone :</strong> +33 7 82 92 70 10</p>
-                        <p><strong>Localisation :</strong> Villeurbanne, France</p>
-                        <p><strong>Âge :</strong> 22 ans</p>
+                        <p><strong>Localisation :</strong> Lyon, France</p>
+                        <p><strong>Mobilité :</strong> France entière</p>
                         <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/baptiste-ridolfi" target="_blank">baptiste-ridolfi</a></p>
                     </div>
                     <div>
                         <p>
-                           Bonjour ! Je suis <strong>Baptiste Ridolfi</strong>, ingénieur en <strong>Génie Mécanique</strong> diplômé de l'École Polytechnique Universitaire de Lyon 1.<br><br>
+                            Bonjour ! Je suis <strong>Baptiste Ridolfi</strong>, ingénieur en <strong>Génie Mécanique</strong> diplômé de l'École Polytechnique Universitaire de Lyon 1.<br><br>
 
                             Mon parcours s'est construit autour d'une double compétence en <strong>calcul de structures</strong> et en <strong>mécanique des fluides numérique</strong>. À l'Université de Tohoku, au Japon, j'ai mené une étude du flux thermique sur un véhicule de rentrée atmosphérique en collaboration avec l'agence spatiale japonaise, de la génération de maillage à la validation en soufflerie hypersonique, travail qui a donné lieu à une <strong>publication scientifique</strong>. Chez <strong>Clauger</strong>, j'ai ensuite créé de zéro la fonction calcul mécanique du bureau d'études : outils de dimensionnement sous norme, notes de calcul éléments finis justificatives et manuels internes, sur l'ensemble du catalogue machines.<br><br>
-                            
+
                             Ce qui m'intéresse, c'est la chaîne complète : partir d'une géométrie CAO, la modéliser, la justifier, et rendre le résultat exploitable par ceux qui conçoivent. Je travaille aussi bien sous <strong>SolidWorks et Ansys</strong> que sous <strong>OpenFOAM</strong> et en calcul parallèle.<br><br>
-                            
+
                             Je recherche aujourd'hui un poste d'<strong>ingénieur calcul</strong>, mêlant simulation et conception, <strong>disponible à partir de mi-octobre 2026</strong>.<br><br>
-                            
+
                             N'hésitez pas à parcourir mes projets ci-dessous et à me contacter pour échanger sur vos besoins.
                         </p>
                     </div>
@@ -332,11 +351,30 @@
             </div>
         </div>
     </section>
+
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
             <div class="section-bg">
                 <h2>Expériences Professionnelles</h2>
+                <div class="timeline-item">
+                    <div class="date">Avril 2026 - Septembre 2026</div>
+                    <h3>Stage Ingénieur Bureau d'Études - Clauger (Brignais, France)</h3>
+                    <p>
+                        Internalisation de la compétence de dimensionnement mécanique, en tant que premier et seul ingénieur mécanique de l'entreprise.<br><br>
+                        Mission transverse sur l'ensemble du catalogue machines : structuration d'un dossier mécanique interne, développement d'outils de dimensionnement sous norme et production de notes de calcul justificatives, dont une validée par un bureau d'études externe.
+                    </p>
+                    <br>
+                    <p><strong>Compétences développées :</strong></p>
+                    <ul style="padding-left: 25px;">
+                        <li><strong>Technique (calcul de structures) :</strong> SolidWorks Simulation, éléments finis, calcul analytique RDM sous Excel/VBA.</li>
+                        <li><strong>Normatif :</strong> Eurocodes 0 et 1, NF EN 14122-4, NF EN 13001, NF EN 1993-1-8.</li>
+                        <li><strong>Méthodologie :</strong> simplification et idéalisation de modèles CAO, formulation et justification des hypothèses.</li>
+                        <li><strong>Transmission :</strong> rédaction de référentiels et de manuels pour des utilisateurs non spécialistes.</li>
+                    </ul>
+                    <br>
+                    <a href="detail_stage_clauger.html" class="btn-details">Voir les détails de cette expérience &rarr;</a>
+                </div>
                 <div class="timeline-item">
                     <div class="date">Mai 2025 - Août 2025</div>
                     <h3>Stage Assistant Ingénieur - Université de Tohoku (Sendai, Japon)</h3>
@@ -371,7 +409,7 @@
             <div class="projects-grid">
                 
                 <div class="project-card">
-                    <h3>Efficacité des winglets - En cours</h3>
+                    <h3>Efficacité des winglets</h3>
                     <br><br>
                     <p>Outils Utilisés : <strong>SolidWorks, Ansys Workbench</strong></p>
                     <br>
@@ -426,6 +464,7 @@
                     <div class="date">2023 - 2026</div>
                     <h3>École Polytechnique Universitaire de Lyon</h3>
                     <p>Diplôme d'ingénieur en génie Mécanique</p>
+                    <p>Options : simulation numérique haute performance, écoulements complexes et polyphasiques, turbomachines</p>
                 </div>
                 <div class="timeline-item">
                     <div class="date">2021 - 2023</div>
@@ -451,27 +490,38 @@
                     <span class="skill-item">Python</span> 
                     <span class="skill-item">MATLAB</span> 
                     <span class="skill-item">C / C++</span> 
+                    <span class="skill-item">VBA</span> 
                     <span class="skill-item">HTML / CSS</span> 
                     <span class="skill-item">LaTeX</span>
                 </div>
                 
                 <div class="skill-category">
-                    <h4>Simulation & CAO </h4>
-                    <span class="skill-item">ANSYS (Fluent, IcemCFD)</span> 
-                    <span class="skill-item">OpenFOAM</span> 
+                    <h4>Calcul de structures</h4>
+                    <span class="skill-item">Ansys Mechanical</span> 
+                    <span class="skill-item">SolidWorks Simulation</span> 
                     <span class="skill-item">Patran / Nastran</span> 
+                    <span class="skill-item">Soudix</span> 
+                    <span class="skill-item">Eurocodes</span> 
+                </div>
+
+                <div class="skill-category">
+                    <h4>Mécanique des fluides &amp; CAO</h4>
+                    <span class="skill-item">Ansys Fluent</span> 
+                    <span class="skill-item">OpenFOAM</span> 
+                    <span class="skill-item">ICEM CFD</span> 
+                    <span class="skill-item">Calcul parallèle (HPC)</span> 
                     <span class="skill-item">SolidWorks</span> 
-                    <span class="skill-item">Pack Office</span> 
+                    <span class="skill-item">Creo Parametric</span> 
                 </div>
                 
                 <div class="skill-category">
                     <h4>Soft Skills / Transversales</h4>
+                    <span class="skill-item">Autonomie sur sujet non couvert en interne</span> 
                     <span class="skill-item">Communication scientifique (Fr/En)</span> 
-                    <span class="skill-item">Travail d'équipe / Pluridisciplinaire</span> 
-                    <span class="skill-item">Autonomie et Initiative</span> 
-                    <span class="skill-item">Rigueur</span> 
-                    <span class="skill-item">Adaptabilité aux outils</span> 
-                    <span class="skill-item">Résolution de problèmes</span> 
+                    <span class="skill-item">Interface atelier / bureau d'études</span> 
+                    <span class="skill-item">Transmission et rédaction de méthodes</span> 
+                    <span class="skill-item">Travail en équipe pluridisciplinaire</span> 
+                    <span class="skill-item">Analyse critique des résultats</span> 
                 </div>
                 
                 <div class="skill-category">
@@ -509,12 +559,12 @@
                         Intéressé par mon profil ? N'hésitez pas à me contacter !
                     </p>
                     <div class="social-links">
-                        <a href="mailto:baptiste.ridolfi@etu.univ-lyon1.fr">Email</a>
+                        <a href="mailto:baptiste.ridolfi@gmail.com">Email</a>
                         <a href="https://linkedin.com/in/baptiste-ridolfi">LinkedIn</a>
-                        <a href="tel:+33 7 82 92 70 10">Téléphone</a>
+                        <a href="tel:+33782927010">Téléphone</a>
                     </div>
                     <p style="margin-top: 2rem; color: #666;">
-                        Disponible pour un stage de fin d'études.
+                        Disponible pour un poste d'ingénieur calcul à partir de mi-octobre 2026.
                     </p>
                 </div>
             </div>
@@ -524,7 +574,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Baptiste Ridolfi. Tous droits réservés.</p>
+            <p>&copy; 2026 Baptiste Ridolfi. Tous droits réservés.</p>
         </div>
     </footer>
 
